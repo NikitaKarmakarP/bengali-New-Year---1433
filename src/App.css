@@ -1,0 +1,169 @@
+/* Floating Dock Styles - Premium Navigation */
+.floating-dock {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  display: flex;
+  gap: 0.8rem;
+  flex-direction: row;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  z-index: 1000;
+}
+
+.dock-item {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  color: white;
+  filter: drop-shadow(0 10px 10px rgba(0,0,0,0.5));
+}
+
+.dock-item:hover {
+  background: transparent;
+  border: none;
+  filter: drop-shadow(0 10px 20px rgba(255,179,0,0.4));
+}
+
+.dock-item.active {
+  background: transparent;
+  border: none;
+}
+
+.dock-active-indicator {
+  position: absolute;
+  top: -10px;
+  bottom: auto;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+.dock-tooltip {
+  position: absolute;
+  top: auto;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(20px);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 14px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.dock-item:hover .dock-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Theme Switcher Integration */
+.theme-switcher {
+  position: fixed;
+  top: auto;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.theme-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  color: white;
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.theme-btn.active {
+  opacity: 1;
+  background: var(--accent-color);
+  color: black;
+  box-shadow: 0 10px 20px rgba(var(--accent-color-rgb), 0.3);
+}
+
+/* Cinematic Grain Overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Pulse Animation for Events */
+.pulse-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--accent-color);
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.5); opacity: 1; }
+}
+
+.main-content.full-screen {
+  padding-top: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.page-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
