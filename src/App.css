@@ -167,3 +167,72 @@
   position: relative;
 }
 
+/* Mobile Responsiveness and Layout Fixes */
+@media (max-width: 850px) {
+  /* Convert grid layouts to vertical stacks */
+  div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Floating Dock bottom placement and resizing */
+  .floating-dock {
+    top: auto;
+    bottom: 1.5rem;
+    right: 50%;
+    transform: translateX(50%);
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 100px;
+    gap: 0.5rem;
+    width: max-content;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .dock-item {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .dock-tooltip {
+    display: none !important;
+  }
+
+  /* Theme Switcher top placement */
+  .theme-switcher {
+    top: 1rem;
+    right: 1rem;
+    bottom: auto;
+    transform: scale(0.85);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.3rem;
+  }
+
+  /* Adjust section paddings */
+  section {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  /* Fix huge paddings dynamically */
+  div[style*="padding: 4rem"] {
+    padding: 1.5rem !important;
+  }
+
+  /* Override desktop flex gaps */
+  div[style*="gap: 2.5rem"] {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+
+  /* Make premium buttons full width */
+  .btn-premium, .btn-secondary {
+    width: 100%;
+    padding: 1rem !important;
+    font-size: 1.1rem !important;
+  }
+}
+
